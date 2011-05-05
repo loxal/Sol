@@ -1,0 +1,63 @@
+{#
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#}
+
+{% load i18n %}
+        {% if not mail_body %}
+
+<!--
+  ~ Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<form action='' method='post'>
+            <fieldset>
+                <legend>{% blocktrans %}Contact{% endblocktrans %}</legend>
+                <label for="sender">{% blocktrans %}Email:{% endblocktrans %}</label>
+                <input class="text" id="sender" name="sender" type="text"/>
+                <label for="name">{% blocktrans %}Name:{% endblocktrans %}</label>
+                <input class="text" id="name" name="name" type="text"/>
+                <label for="body">{% blocktrans %}Message*:{% endblocktrans %}
+                    {% if send_mail %}
+                    <strong class='missing-value'>{% blocktrans %}Message required{% endblocktrans %}</strong>
+                    {% endif %}
+                </label>
+                <textarea id="body" name="body" rows="1" cols="1"></textarea>
+                <button type="submit" name="send" value="true">{% blocktrans %}Send message{% endblocktrans %}</button>
+            </fieldset>
+        </form>
+        {% else %}
+        <fieldset><legend>{% blocktrans %}Message send successfully{% endblocktrans %}</legend>
+            <dl>
+                <dt>{% blocktrans %}Email:{% endblocktrans %}</dt>
+                <dd>{{ mail_sender }}</dd>
+                <dt>{% blocktrans %}Name:{% endblocktrans %}</dt>
+                <dd>{{ mail_name }}</dd>
+                <dt>{% blocktrans %}Message:{% endblocktrans %}</dt>
+                <dd>{{ mail_body }}</dd>
+            </dl>
+        </fieldset>
+        {% endif %}

@@ -1,0 +1,12 @@
+.DS_Store
+.hg
+.hgignore
+
+/\.idea/workspace.xml
+
+*.mo
+*.pyc
+
+/out
+/lib
+/wiki

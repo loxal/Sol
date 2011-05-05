@@ -1,0 +1,78 @@
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+application: sol
+version: c
+runtime: python
+api_version: 1
+default_expiration: "30d"
+
+derived_file_type:
+- python_precompiled
+
+handlers:
+#- url: /static/mobile.mf
+#  static_files: static/\1
+#  mime_type: text/cache-manifest
+#  upload: static/mobile.mf
+
+# should precede ".*" (main URL handler)
+- url: /static
+  static_dir: static
+
+# should precede ".*" (main URL handler)
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+
+# should precede ".*" (main URL handler)
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+
+# an entry for every service
+- url: /service/web-commander.*
+  script: service/web_commander.py
+
+# WORKAROUND for Google Friend Connect
+- url: /rpc_relay.html
+  static_files: static/mashup-module/google-friendconnect/rpc_relay.html
+  upload: static/mashup-module/google-friendconnect/rpc_relay.html
+
+# WORKAROUND for Google Friend Connect
+- url: /canvas.html
+  static_files: static/mashup-module/google-friendconnect/canvas.html
+  upload: static/mashup-module/google-friendconnect/canvas.html
+
+# main URL handler
+- url: .*
+  script: service/main.py
+
+#- url: /svc/([^\.].*\.(css))
+#  static_files: svc/\1
+#  upload: svc/(.*\.*)
+  
+# can a not operator(^) simplify the expression? [l/l/l]
+#- url: /gwt/(.*\.(gif|png|jpg|html|js))
+#  static_files: gwt/\1
+#  upload: gwt/(.*\.(gif|png|jpg|html|js))
+
+#- url: /svc
+#  script: poc.py
+
+#- url: /user.html
+#  script: poc.py
+#  login: required
+#  login: admin
+#  secure: always

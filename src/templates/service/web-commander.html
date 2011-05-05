@@ -1,0 +1,193 @@
+{#
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#}
+
+{% extends properties.tpl_main_service %}
+{% load i18n %}
+{% block title %}{% blocktrans %}Web Commander{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+<script src="{{ properties.res_dir }}/service/web-commander.js" type="text/javascript"></script>
+<div class="post">
+    <h1>{% blocktrans %}Web Commander{% endblocktrans %}</h1>
+
+    <p>
+        {% blocktrans %}
+        <strong>Navigate the web</strong>, retrieve and access information rapidly using <strong>keywords as web
+        commands</strong>.
+        Increase your work efficiency <em>creating your own shortcuts</em> for frequently used lookups!
+        {% endblocktrans %}
+    </p>
+
+    <p>
+        {% blocktrans %}
+        This <strong>service is build upon Google's ultra-fast App Engine infrastructure</strong> and is using its <em>memcache
+        technology</em> to speed up the query response times.
+        Compare Web Commander's response times to competing services and decice which is faster!
+        {% endblocktrans %}
+    </p>
+
+    <h2>{% blocktrans %}Setup{% endblocktrans %}</h2>
+    <!--http://mycroft.mozdev.org/developer/devlist.html?email=info%40loxal.net-->
+    <dl>
+        <dt>{% blocktrans %}Firefox and Internet Explorer{% endblocktrans %}</dt>
+        <dd><a href="{{ req_url }}"
+               onClick="addOpenSearch('http://www.loxal.net/static/file/service/web-commander/search.xml'); return false;">
+            {% blocktrans %}Add Search Engine{% endblocktrans %}</a></dd>
+    </dl>
+
+    {% if info_warning %}
+    <div class="info info-warning">
+        <dl>
+            <dt>{% blocktrans %}The web command <em>{{ cmd }}</em> is already <em>public</em>.{% endblocktrans %}</dt>
+            <dd>
+                <a class="linkBox" href="{{ service_path }}" title="Confirmation">Ok</a>
+            </dd>
+        </dl>
+    </div>
+    {% endif %}
+
+    {% if info_success %}
+    <div class="info info-success">
+        <dl>
+            <dt>{% blocktrans %}A web command <em>{{ cmd }}</em> related operation has been <em>executed</em>
+                successfully.{% endblocktrans %}
+            </dt>
+            <dd>
+                <a class="linkBox" href="{{ service_path }}" title="Confirmation">Ok</a>
+            </dd>
+        </dl>
+    </div>
+    {% endif %}
+
+    {% if confirm_delete %}
+    <form action="{{ service_path }}/delete" method="post">
+        <div id="dialog">
+            <dl>
+                <dt>{% blocktrans %}Should the Web Command <em>{{ cmd }}</em> really be <em>deleted</em>?{% endblocktrans %}
+                </dt>
+                <dd>
+                    <input id="key" name="key" type="hidden" value="{{ key }}"/>
+                    <input id="confirm_delete" name="confirm_delete" type="hidden" value="{{ confirm_delete }}"/>
+
+                    <button name="ok" value="." style="width: 88px;">{% blocktrans %}Ok{% endblocktrans %}</button>
+                    <button name="cancel" value="." style="width: 88px;">{% blocktrans %}Cancel{% endblocktrans %}</button>
+                </dd>
+            </dl>
+        </div>
+    </form>
+    {% endif %}
+
+    <!-- copy the opacity feature from Google Reader (a dialog comes up if you try to delete a subscription) -->
+    {% if edit %}
+    <form action="{{ service_path }}/edit" method="post">
+        <div id="dialog">
+            <dl>
+                <dt>{% blocktrans %}The Web Command <em>{{ cmd }}</em> <em>already exists</em>. Should it be updated?{% endblocktrans %}
+                </dt>
+                <dd>
+                    <input id="key" name="key" type="hidden" value="{{ key }}"/>
+                    <input id="name" name="name" type="hidden" value="{{ name }}"/>
+                    <input id="url" name="url" type="hidden" value="{{ url }}"/>
+
+                    <button name="ok" value="." style="width: 88px;">{% blocktrans %}Ok{% endblocktrans %}</button>
+                    <button name="cancel" value="." style="width: 88px;">{% blocktrans %}Cancel{% endblocktrans %}</button>
+                </dd>
+            </dl>
+        </div>
+    </form>
+    {% endif %}
+
+    <h2>{% blocktrans %}Web Commands{% endblocktrans %}</h2>
+    {% if user and not edit and not confirm_delete%}
+    <div class="entry">
+        <form action="{{ service_path }}/create" method="post">
+            <fieldset>
+                <legend>{% blocktrans %}Add a New Web Command{% endblocktrans %}</legend>
+                <label for="cmd">{% blocktrans %}Web Command{% endblocktrans %}</label>
+                <input type="text" id="cmd" name="cmd" title="{% blocktrans %}Command{% endblocktrans %}" value='{{ cmd|default:"g" }}'
+                {% if edit_instant %} readonly='readonly'{% endif %}/><br/>
+                <label for="name">{% blocktrans %}Name{% endblocktrans %}</label>
+                <input type="text" id="name" name="name" title="{% blocktrans %}Name{% endblocktrans %}"
+                       value='{{ name|default:"Google Search" }}'/><br/>
+                <label for="url">{% blocktrans %}URL{% endblocktrans %}</label>
+                <input class="text" type="text" id="url" name="url" title="{% blocktrans %}URL{% endblocktrans %}"
+                       value='{{ url|default:"http://www.google.com/search?q=" }}'/><br/>
+                {% if edit_instant %}
+                <button name="action.edit" value=".">{% blocktrans %}Edit Web Command{% endblocktrans %}</button>
+                {% else %}
+                <button name="action.add" value=".">{% blocktrans %}Add Web Command{% endblocktrans %}</button>
+                {% endif %}
+            </fieldset>
+        </form>
+    </div>
+    {% endif %}
+
+    <table>
+        {% if not user %}
+        <caption>
+            {% blocktrans %}Public Web Commands:{% endblocktrans %} <a href="{{ req_url|create_url_auth|escape }}"
+                                                  title="{% blocktrans %}Google account required{% endblocktrans %}">
+            {% blocktrans %}Customize WebCommands{% endblocktrans %}</a>
+        </caption>
+        {% endif %}
+        <thead>
+        <tr>
+            <th>{% blocktrans %}Command{% endblocktrans %}</th>
+            <th>{% blocktrans %}Name{% endblocktrans %}</th>
+            <th>{% blocktrans %}URL{% endblocktrans %}</th>
+            {% if user %}
+            <th>{% blocktrans %}Public Visibility{% endblocktrans %}</th>
+            <th>{% blocktrans %}Edit{% endblocktrans %}</th>
+            <th>{% blocktrans %}Delete{% endblocktrans %}</th>
+            {% if is_user_admin %}
+            <th>{% blocktrans %}Change Visibility{% endblocktrans %}</th>
+            {% endif %}
+            {% endif %}
+            <!--<th>{% blocktrans %}Owner{% endblocktrans %}</th>
+                <th>{% blocktrans %}Public{% endblocktrans %}</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        {% for web_cmd in web_cmds %}
+        <tr
+        {% cycle class='even',class='odd' %} title="{% blocktrans %}Created:{% endblocktrans %} {{ web_cmd.created|date:"Y-m-d H:i:s" }} |
+        {% blocktrans %}Updated:{% endblocktrans %} {{ web_cmd.updated|date:"Y-m-d H:i:s" }}">
+        <td>{{ web_cmd.cmd }}</td>
+        <td>{{ web_cmd.name|truncatewords:3 }}</td>
+        <td>{{ web_cmd.url|urlizetrunc:33 }}</td>
+        {% if user %}
+        <td><a href="{{ service_path }}/suggest?key={{ web_cmd.key }}"
+               title='{% blocktrans %}Make this useful web command public!{% endblocktrans %}'>{% blocktrans %}Suggest for Public!{% endblocktrans %}</a></td>
+        <td>
+            <a href="{{ service_path }}?edit_instant=.&amp;key={{ web_cmd.key }}&amp;cmd={{ web_cmd.cmd }}&amp;name={{ web_cmd.name }}&amp;url={{ web_cmd.url }}"
+               title='{% blocktrans %}Modify web command{% endblocktrans %}'>{% blocktrans %}Edit{% endblocktrans %}</a></td>
+        <td><a href="{{ service_path }}/delete?key={{ web_cmd.key }}" title='{% blocktrans %}Delete web command{% endblocktrans %}'>
+            {% blocktrans %}Delete{% endblocktrans %}</a></td>
+        {% if is_user_admin %}
+        <td><a href="{{ service_path }}/edit?key={{ web_cmd.key }}&amp;make-public=."
+               title='{% blocktrans %}Make Public!{% endblocktrans %}'>{% blocktrans %}Publish Comand{% endblocktrans %}</a></td>
+        {% endif %}
+        <!--<td>{{ web_cmd.owner.nickname }}</td>
+                <td>{{ web_cmd.is_public}}</td>-->
+        {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

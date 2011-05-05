@@ -1,0 +1,52 @@
+{#
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#}
+
+{% extends properties.tpl_main %}
+{% load i18n %}
+{% block title %}{% blocktrans %}Home{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<div class="post">
+    <h1>{% blocktrans %}About{% endblocktrans %}</h1>
+
+    <p class="long-text">
+        {% blocktrans %}
+        <strong>Loxal</strong> is a
+        <strong>research, development, and business</strong> platform for various projects and concepts.
+        Sol and its technology base offer
+        many advantages to the conventional hosting models.
+        {% endblocktrans %}
+
+    <h2>{% blocktrans %}Quality From the Ground Up{% endblocktrans %}</h2>
+
+    <p class="long-text">
+        {% blocktrans %}
+        <abbr title='Test Driven Development'>TDD</abbr> is the guiding concept for all upcoming releases of sol.
+        Therefore underlying Unit Tests will ensure the proper functionality of every important function to provide a
+        bug free application experience.
+        <abbr title='Quality Assurance'>QA</abbr> methods are important for process critical applications.
+        But manual QA processes are error-prone and not consistent.
+        <em>Automatic QA</em> guarantees a coherent and consistent QA process and therefore <em>reliable application
+        behavior and consistent quality</em>.
+
+    <div style="float: right;">
+        <a href="http://validator.w3.org/check?uri=http://sol.loxal.net" title="HTML5 - the HTML version for web applications">Valid
+            HTML5</a> and CSS3!
+    </div>
+    {% endblocktrans %}
+
+</div>
+{% endblock %}

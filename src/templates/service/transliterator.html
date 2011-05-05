@@ -1,0 +1,68 @@
+{#
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#}
+
+{% extends properties.tpl_main_service %}
+{% load i18n %}
+{% block title %}{% blocktrans %}Latin-to-Russian Transliterator{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+<div class="post">
+    <script src='/static/service/transliterator.js' type='text/javascript'></script>
+    <h1>{% blocktrans %}Latin-to-Russian Transliterator{% endblocktrans %}</h1>
+
+    <p>{% blocktrans %}Simply type cyrillic letters using the corresponding letters of the Latin alphabet and they will be
+        transcribed into corresponding Russian letters on-the-fly as you type them.{% endblocktrans %}</p>
+
+    <div class="entry">
+        <script type='text/javascript'>
+
+            <!--	document.write('non-translated STRING');-->
+            <!--	document.write(gettext('THIS is just another TEST'));-->
+
+        </script>
+        <form action='' name="searchform">
+            <fieldset>
+                <legend><span class="comeon" id="directioncapt">{% blocktrans %}Mode: Russian{% endblocktrans %}</span></legend>
+                <button type="button" onclick="changelanguage(); setfoc();" title='{% blocktrans %} switch type mode using the
+                        Esc or F12 key
+                {% endblocktrans %}'>{% blocktrans %}Switch Mode | Esc{% endblocktrans %}</button>
+                <button type="button" onclick="recovertext(); setfoc();" title='{% blocktrans %} Undo up to ten changes
+                {% endblocktrans %}'>{% blocktrans %}Undo{% endblocktrans %}</button>
+                <button type="button" onclick="highlightall(); setfoc();" title='{% blocktrans %} Select all text
+                {% endblocktrans %}'>{% blocktrans %}Select All{% endblocktrans %}</button>
+                <button type="button" onclick="cleartrans(); setfoc();" title='{% blocktrans %} Clear text
+                {% endblocktrans %}'>{% blocktrans %}Clear{% endblocktrans %}</button>
+                <button type="button" onclick="translatealltocharset2(); setfoc();" title='{% blocktrans %} convert text to
+                        Russian alphabet
+                {% endblocktrans %}'>{% blocktrans %}To Russian{% endblocktrans %}</button>
+                <button type="button" onclick="translatealltocharset1(); setfoc();" title='{% blocktrans %} convert text to
+                        Latin alphabet
+                {% endblocktrans %}'>{% blocktrans %}To Latin{% endblocktrans %}</button>
+
+                <textarea name="subject" rows="17" cols="75" onkeypress="translate_letter(event);"
+                          onkeydown="AkeyIsDown(event);"
+                          onKeyUp="lettcount(); savechanges(); key_up_process();"></textarea>
+                <br/>
+                <label for='chrCount'>{% blocktrans %}Characters:{% endblocktrans %}</label>
+                <input type="text" id='chrCount' class="lcounter" value="0" size="4" name="letterscounter"
+                       readonly='true' title='{% blocktrans %} Character counter{% endblocktrans %}'>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- /post -->
+{% endblock %}

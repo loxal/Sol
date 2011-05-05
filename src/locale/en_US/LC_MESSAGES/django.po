@@ -1,0 +1,578 @@
+# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# Basic translation of many sol labels
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-14 15:03+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: service/web_commander.py:232
+msgid "sol Notification: Web Commander - Suggestion"
+msgstr ""
+
+#: sol/properties.py:6
+msgid "Alexander Orlov"
+msgstr ""
+
+#: sol/properties.py:7
+msgid "synergy of loxal"
+msgstr ""
+
+#: sol/properties.py:9
+msgid "...more than just the sum of its parts."
+msgstr ""
+
+#: templates/404-Not-Found.html:13 templates/404-Not-Found.html.py:17
+msgid "Error: 404 - Not Found"
+msgstr ""
+
+#: templates/404-Not-Found.html:19
+msgid "The page you have requested:"
+msgstr ""
+
+#: templates/home.html:14 templates/main.html:27 templates/main.html.py:48
+#: templates/main.html:74
+msgid "Home"
+msgstr ""
+
+#: templates/home.html:18
+msgid "Abstract"
+msgstr ""
+
+#: templates/home.html:21
+msgid ""
+"\n"
+"        The <em>sol</em> project incorporates other projects which may be "
+"licensed under other licenses. Nevertheless\n"
+"        sol\n"
+"        is working and can be deployed as a GAE web application!\n"
+"        Hereby <strong><a href='http://site.loxal.net/Home/about-"
+"loxal'>loxal</a></strong> as whole is a\n"
+"        <strong>research, development, and business</strong> platform for "
+"various projects and concepts.\n"
+"        Sol and its technology base <a href='http://site.loxal.net/faq-sol-a-"
+"gae-cms' title='FAQ: sol, a GAE CMS'>offer\n"
+"        many advantages to the conventional hosting models</a>.\n"
+"        "
+msgstr ""
+
+#: templates/home.html:31
+msgid "Quality From the Ground Up"
+msgstr ""
+
+#: templates/home.html:34
+msgid ""
+"\n"
+"        <abbr title='Test Driven Development'>TDD</abbr> is the guiding "
+"concept for all upcoming releases of Wentity.\n"
+"        Therefore underlying Unit Tests will ensure the proper functionality "
+"of every important function to provide a\n"
+"        bug free application experience.\n"
+"        <abbr title='Quality Assurance'>QA</abbr> methods are important for "
+"process critical applications.\n"
+"        But manual QA processes are error-prone and not consistent.\n"
+"        <em>Automatic QA</em> guarantees a coherent and consistent QA "
+"process and therefore <em>reliable application\n"
+"        behavior and consistent quality</em>.\n"
+"\n"
+"    <div style=\"float: right;\">\n"
+"        <a href=\"http://validator.w3.org/check?uri=http://www.loxal.net\" "
+"title=\"HTML5 is in draft status\">Valid\n"
+"            HTML5!</a>\n"
+"    </div>\n"
+"    "
+msgstr ""
+
+#: templates/home.html:49
+msgid "Buy Alex a Beer"
+msgstr ""
+
+#: templates/home.html:52
+msgid ""
+"\n"
+"        If you <em>like any of the services</em> on this page, maybe you "
+"would like to <em>buy me a beer</em>, using the\n"
+"        Donate button.\n"
+"        Also if you want some special <em>features</em> being implemented or "
+"prioritized I could think about it,\n"
+"        drinking a Bavarian <em>Helles</em>, which is my favorite beer "
+"sort.\n"
+"        "
+msgstr ""
+
+#: templates/imprint.html:4 templates/imprint.html.py:9 templates/main.html:78
+msgid "Imprint"
+msgstr ""
+
+#: templates/imprint.html:13
+msgid "Responsible for content:"
+msgstr ""
+
+#: templates/main.html:57
+msgid "Language:"
+msgstr ""
+
+#: templates/main.html:60 templates/service/web-commander.html:127
+msgid "Google account required"
+msgstr ""
+
+#: templates/main.html:60
+msgid "Login"
+msgstr ""
+
+#: templates/main.html:63
+msgid "Authentication powered by Google"
+msgstr ""
+
+#: templates/main.html:63
+msgid "Logout:"
+msgstr ""
+
+#: templates/main.html:73
+msgid "Start and website entry point"
+msgstr ""
+
+#: templates/main.html:75
+msgid "Various uncategorized content"
+msgstr ""
+
+#: templates/main.html:76 templates/misc.html:13
+msgid "Misc"
+msgstr ""
+
+#: templates/main.html:77
+msgid "...with contact formular"
+msgstr ""
+
+#: templates/main.html:81
+msgid "Services"
+msgstr ""
+
+#: templates/main.html:85
+msgid "...properties and environment settings of your browser."
+msgstr ""
+
+#: templates/main.html:92
+msgid ""
+"Transcribes latin into Russian (cyrillic alphabet) letters on the fly as you "
+"type them"
+msgstr ""
+
+#: templates/main.html:95
+msgid "Map key combinations (shortcuts) to web requests"
+msgstr ""
+
+#: templates/main.html:111
+msgid "Powered by"
+msgstr ""
+
+#: templates/main.html:112
+msgid "sol - Google App Engine Content Management System"
+msgstr ""
+
+#: templates/misc.html:18
+msgid "Social Networking Transcendence"
+msgstr ""
+
+#: templates/search.html:13
+msgid "Search"
+msgstr ""
+
+#: templates/service/my-browser.html:13 templates/service/my-browser.html:18
+msgid "My Browser"
+msgstr ""
+
+#: templates/service/my-browser.html:21
+msgid ""
+"\n"
+"            Below you will find the properties and environment settings of "
+"your browser that are visible for\n"
+"            every website.\n"
+"        "
+msgstr ""
+
+#: templates/service/my-browser.html:28
+msgid "Server-side Information"
+msgstr ""
+
+#: templates/service/my-browser.html:30
+msgid "Browser:"
+msgstr ""
+
+#: templates/service/my-browser.html:32
+msgid "IP Address:"
+msgstr ""
+
+#: templates/service/my-browser.html:35
+msgid "Client-side Information (via JavaScript)"
+msgstr ""
+
+#: templates/service/symbol-lister.html:13
+#: templates/service/symbol-lister.html:18
+msgid "Symbol Lister"
+msgstr ""
+
+#: templates/service/symbol-lister.html:21
+msgid ""
+"This tool provides an overview over HTML entities that include dingbats and "
+"other useful symbols. The\n"
+"        main advantage is that you do not need to carry about any external "
+"graphics. You can simply copy&amp;paste the\n"
+"        corresponding symbol or its HTML entity code to your website or "
+"document. And do not forget: These are genuine\n"
+"        characters, not images!"
+msgstr ""
+
+#: templates/service/symbol-lister.html:32
+msgid "Symbol Display"
+msgstr ""
+
+#: templates/service/symbol-lister.html:39
+msgid "Symbol ID:"
+msgstr ""
+
+#: templates/service/symbol-lister.html:42
+msgid ""
+"E.g. \"10046\" in <em>decimal</em> notation or \"<strong>x</strong>27bd\" in "
+"<em>hexadecimal</em>\n"
+"                notation"
+msgstr ""
+
+#: templates/service/symbol-lister.html:44
+msgid " Display Symbol"
+msgstr ""
+
+#: templates/service/symbol-lister.html:48
+msgid "Symbol Table Configurator"
+msgstr ""
+
+#: templates/service/symbol-lister.html:49
+msgid "From:"
+msgstr ""
+
+#: templates/service/symbol-lister.html:51
+msgid "To:"
+msgstr ""
+
+#: templates/service/symbol-lister.html:53
+msgid " List Symbols Within Range"
+msgstr ""
+
+#: templates/service/transliterator.html:13
+#: templates/service/transliterator.html:19
+msgid "Latin-to-Russian Transliterator"
+msgstr ""
+
+#: templates/service/transliterator.html:21
+msgid ""
+"Simply type cyrillic letters using the corresponding letters of the Latin "
+"alphabet and they will be\n"
+"        transcribed into corresponding Russian letters on-the-fly as you "
+"type them."
+msgstr ""
+
+#: templates/service/transliterator.html:33
+msgid "Mode: Russian"
+msgstr ""
+
+#: templates/service/transliterator.html:34
+msgid ""
+" switch type mode using the\n"
+"                        Esc or F12 key\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:36
+msgid "Switch Mode | Esc"
+msgstr ""
+
+#: templates/service/transliterator.html:37
+msgid ""
+" Undo up to ten changes\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:38
+msgid "Undo"
+msgstr ""
+
+#: templates/service/transliterator.html:39
+msgid ""
+" Select all text\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:40
+msgid "Select All"
+msgstr ""
+
+#: templates/service/transliterator.html:41
+msgid ""
+" Clear text\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:42
+msgid "Clear"
+msgstr ""
+
+#: templates/service/transliterator.html:43
+msgid ""
+" convert text to\n"
+"                        Russian alphabet\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:45
+msgid "To Russian"
+msgstr ""
+
+#: templates/service/transliterator.html:46
+msgid ""
+" convert text to\n"
+"                        Latin alphabet\n"
+"                "
+msgstr ""
+
+#: templates/service/transliterator.html:48
+msgid "To Latin"
+msgstr ""
+
+#: templates/service/transliterator.html:54
+msgid "Characters:"
+msgstr ""
+
+#: templates/service/transliterator.html:56
+msgid " Character counter"
+msgstr ""
+
+#: templates/service/web-commander.html:4
+#: templates/service/web-commander.html:9
+msgid "Web Commander"
+msgstr ""
+
+#: templates/service/web-commander.html:12
+msgid ""
+"\n"
+"        <strong>Navigate the web</strong>, retrieve and access information "
+"rapidly using <strong>keywords as web\n"
+"        commands</strong>.\n"
+"        Increase your work efficiency <em>creating your own shortcuts</em> "
+"for frequently used lookups!\n"
+"        "
+msgstr ""
+
+#: templates/service/web-commander.html:20
+msgid ""
+"\n"
+"        This <strong>service is build upon Google's ultra-fast App Engine "
+"infrastructure</strong> and is using its <em>memcache\n"
+"        technology</em> to speed up the query response times.\n"
+"        Compare Web Commander's response times to competing services and "
+"decice which is faster!\n"
+"        "
+msgstr ""
+
+#: templates/service/web-commander.html:27
+msgid "Setup"
+msgstr ""
+
+#: templates/service/web-commander.html:30
+msgid "Firefox, Opera, and Internet Explorer"
+msgstr ""
+
+#: templates/service/web-commander.html:33
+msgid "Add Search Engine"
+msgstr ""
+
+#: templates/service/web-commander.html:39
+#, python-format
+msgid "The web command <em>%(cmd)s</em> is already <em>public</em>."
+msgstr ""
+
+#: templates/service/web-commander.html:50
+#, python-format
+msgid ""
+"A web command <em>%(cmd)s</em> related operation has been <em>executed</em>\n"
+"                successfully."
+msgstr ""
+
+#: templates/service/web-commander.html:64
+#, python-format
+msgid "Should the Web Command <em>%(cmd)s</em> really be <em>deleted</em>?"
+msgstr ""
+
+#: templates/service/web-commander.html:70
+#: templates/service/web-commander.html:90
+msgid "Ok"
+msgstr ""
+
+#: templates/service/web-commander.html:71
+#: templates/service/web-commander.html:91
+msgid "Cancel"
+msgstr ""
+
+#: templates/service/web-commander.html:83
+#, python-format
+msgid ""
+"The Web Command <em>%(cmd)s</em> <em>already exists</em>. Should it be "
+"updated?"
+msgstr ""
+
+#: templates/service/web-commander.html:98
+msgid "Web Commands"
+msgstr ""
+
+#: templates/service/web-commander.html:103
+msgid "Add a New Web Command"
+msgstr ""
+
+#: templates/service/web-commander.html:104
+msgid "Web Command"
+msgstr ""
+
+#: templates/service/web-commander.html:105
+#: templates/service/web-commander.html:133
+msgid "Command"
+msgstr ""
+
+#: templates/service/web-commander.html:107
+#: templates/service/web-commander.html:108
+#: templates/service/web-commander.html:134
+msgid "Name"
+msgstr ""
+
+#: templates/service/web-commander.html:110
+#: templates/service/web-commander.html:111
+#: templates/service/web-commander.html:135
+msgid "URL"
+msgstr ""
+
+#: templates/service/web-commander.html:114
+msgid "Edit Web Command"
+msgstr ""
+
+#: templates/service/web-commander.html:116
+msgid "Add Web Command"
+msgstr ""
+
+#: templates/service/web-commander.html:126
+msgid "Public Web Commands:"
+msgstr ""
+
+#: templates/service/web-commander.html:128
+msgid "Customize WebCommands"
+msgstr ""
+
+#: templates/service/web-commander.html:137
+msgid "Public Visibility"
+msgstr ""
+
+#: templates/service/web-commander.html:138
+#: templates/service/web-commander.html:161
+msgid "Edit"
+msgstr ""
+
+#: templates/service/web-commander.html:139
+#: templates/service/web-commander.html:163
+msgid "Delete"
+msgstr ""
+
+#: templates/service/web-commander.html:141
+msgid "Change Visibility"
+msgstr ""
+
+#: templates/service/web-commander.html:144
+msgid "Owner"
+msgstr ""
+
+#: templates/service/web-commander.html:145
+msgid "Public"
+msgstr ""
+
+#: templates/service/web-commander.html:151
+msgid "Created:"
+msgstr ""
+
+#: templates/service/web-commander.html:152
+msgid "Updated:"
+msgstr ""
+
+#: templates/service/web-commander.html:158
+msgid "Make this useful web command public!"
+msgstr ""
+
+#: templates/service/web-commander.html:158
+msgid "Suggest for Public!"
+msgstr ""
+
+#: templates/service/web-commander.html:161
+msgid "Modify web command"
+msgstr ""
+
+#: templates/service/web-commander.html:162
+msgid "Delete web command"
+msgstr ""
+
+#: templates/service/web-commander.html:166
+msgid "Make Public!"
+msgstr ""
+
+#: templates/service/web-commander.html:166
+msgid "Publish Comand"
+msgstr ""
+
+#: templates/service/include/mail.html:12
+msgid "Contact"
+msgstr ""
+
+#: templates/service/include/mail.html:13
+#: templates/service/include/mail.html:29
+msgid "Email:"
+msgstr ""
+
+#: templates/service/include/mail.html:15
+#: templates/service/include/mail.html:31
+msgid "Name:"
+msgstr ""
+
+#: templates/service/include/mail.html:17
+msgid "Message*:"
+msgstr ""
+
+#: templates/service/include/mail.html:19
+msgid "Message required"
+msgstr ""
+
+#: templates/service/include/mail.html:23
+msgid "Send message"
+msgstr ""
+
+#: templates/service/include/mail.html:27
+msgid "Message send successfully"
+msgstr ""
+
+#: templates/service/include/mail.html:33
+msgid "Message:"
+msgstr ""
