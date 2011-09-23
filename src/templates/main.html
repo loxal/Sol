@@ -54,10 +54,10 @@
         </div>
         <div id="meta-ctrl">
             {% ifequal users.get_current_user user %}
-            <a class="linkBox" href="{{ req_url|create_url_auth|escape }}"
+            <a href="{{ req_url|create_url_auth|escape }}"
                title="{% blocktrans %}Google account required{% endblocktrans %}">{% blocktrans %}Login{% endblocktrans %}</a>
             {% else %}
-            <a class="linkBox" href="{{ req_url|create_url_auth|escape }}"
+            <a href="{{ req_url|create_url_auth|escape }}"
                title="{% blocktrans %}Authentication powered by Google{% endblocktrans %}">{% blocktrans %}Logout:{% endblocktrans %}</a>
             {{ user }}
             {% endifequal %}
