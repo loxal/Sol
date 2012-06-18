@@ -110,18 +110,6 @@ GADGET_OPENSOCIAL_INTERACTIVITY = '''
 '''
 # main (financial) resources gaining entity
 SPONSOR = '''
-    <!-- Google AdSense/ -->
-    <script type="text/javascript"><!--
-        google_ad_client = "pub-7462302732712971";
-        /* sol.header.half-banner */
-        google_ad_slot = "4241123125";
-        google_ad_width = 234;
-        google_ad_height = 60;
-        //-->
-    </script>
-    <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
 '''
 # (financial) resources gaining entity
 SUPPORT_CAMPAIGN = '''
