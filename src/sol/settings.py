@@ -18,4 +18,4 @@ DEBUG = True
 USE_I18N = True
 
 UNITTEST_BASE_URL = "http://localhost:8080"
-UNITTEST_BASE_URL_PROD = "http://www.loxal.net"
+UNITTEST_BASE_URL_PROD = "http://sol.loxal.net"

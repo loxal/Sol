@@ -34,13 +34,11 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Unused in query history -- copied from input.
 - kind: WebCmd
   properties:
   - name: is_public
   - name: __key__
 
-# Unused in query history -- copied from input.
 - kind: WebCmd
   properties:
   - name: owner

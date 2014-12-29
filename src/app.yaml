@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-application: sol-loxal
+application: loxal-sol
 version: b
-runtime: python
+runtime: python27
 api_version: 1
 default_expiration: "30d"
+threadsafe: false
 
 derived_file_type:
 - python_precompiled
 
 builtins:
 - remote_api: on
-- datastore_admin: on
 
 handlers:
 #- url: /static/mobile.mf

@@ -15,16 +15,16 @@
 # limitations under the License.
 
 # User related constants
-AUTHOR = _('Alexander Orlov')
-TITLE = _('synergy of loxal')
+AUTHOR = 'Alexander Orlov'
+TITLE = 'synergy of loxal'
 # sub title
-TITLE_DESC = _('...more than just the sum of its parts.')
+TITLE_DESC = '...more than just the sum of its parts.'
 # administrative content, also responsible for site content
 IMPRINT = '''
     Alexander Orlov
 
-    Rablstr. 12
-    81669 Munich
+    Mannhardtstr. 8
+    80538 Munich
     Germany
 '''
 
@@ -61,7 +61,7 @@ google.friendconnect.container.renderMembersGadget(
   skin);
 </script>
 '''
-# to animate the user to interact with the site and provide feedback 
+# to animate the user to interact with the site and provide feedback
 GADGET_OPENSOCIAL_FEEDBACK = '''
     <!-- Include the Google Friend Connect javascript library. -->
     <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
@@ -132,7 +132,8 @@ BOOKMARK = '''
 '''
 # to track the visitors
 ANALYTICS = '''
-        <script type="text/javascript"> <!--Google Analytics Tracker-->
+        <!--Google Analytics Tracker-->
+        <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(
             ['_setAccount', 'UA-7363751-1'],

@@ -1,21 +1,5 @@
-{#
-# Copyright 2010 Alexander Orlov <alexander.orlov@loxal.net>
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#}
-
-{% load i18n %}
 <!DOCTYPE html>
+{% load i18n %}
 <meta charset="UTF-8">
 <meta name="keywords" content="{{ properties.title }}, {{ properties.author }}">
 <meta name="description"
@@ -24,20 +8,6 @@
 <meta name="generator" content="sol GAE Service Framework: http://dev.loxal.net">
 <link rel="stylesheet" href="{{ properties.res_dir }}/winter.css" type="text/css">
 <title>{% block title %}{% blocktrans %}Home{% endblocktrans %}{% endblock %} | {{ properties.title }}</title>
-
-<!--&lt;!&ndash;[if IE]>-->
-<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>-->
-<!--<div id="CFInstall" style="border: 9px #111 dashed;">This site is using web application technology standards like HTML5-->
-    <!--which <strong>Internet Explorer does not support</strong>. To use these technologies within Internet Explorer please accept-->
-    <!--the pop-up window above to get Google Chrome Frame installed!</div>-->
-<!--<script>-->
-    <!--CFInstall.check({-->
-        <!--node: "CFInstall",-->
-        <!--mode: "popup"-->
-    <!--});-->
-<!--</script>-->
-<!--<![endif]&ndash;&gt;-->
 
 {{ properties.analytics }}
 
